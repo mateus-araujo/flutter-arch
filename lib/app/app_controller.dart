@@ -1,4 +1,4 @@
-import 'package:arch/app/viewmodels/change_theme_viewmodel.dart';
+import 'package:arch/app/core/viewmodels/change_theme_viewmodel.dart';
 import 'package:flutter/foundation.dart';
 
 class AppController {
@@ -10,6 +10,5 @@ class AppController {
 
   bool get isDark => changeThemeViewModel.config.themeSwitch.value;
   ValueNotifier<bool> get themeSwitch =>
-    changeThemeViewModel.config.themeSwitch;
-
+      changeThemeViewModel.config.themeSwitch;
 }

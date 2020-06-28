@@ -1,13 +1,12 @@
-import 'package:arch/app/model/appconfig_model.dart';
-import 'package:arch/app/interfaces/local_storage_interface.dart';
+import 'package:arch/app/core/interfaces/local_storage_interface.dart';
+import 'package:arch/app/core/models/appconfig_model.dart';
 
 class ChangeThemeViewModel {
-
   final ILocalStorage storage;
 
   final AppConfigModel config = AppConfigModel();
 
-  ChangeThemeViewModel({ this.storage });
+  ChangeThemeViewModel({this.storage});
 
   Future init() async {
     await storage.get('isDark').then((value) {

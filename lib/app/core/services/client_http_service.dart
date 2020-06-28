@@ -1,4 +1,4 @@
-import 'package:arch/app/interfaces/client_http_interface.dart';
+import 'package:arch/app/core/interfaces/client_http_interface.dart';
 import 'package:dio/dio.dart';
 
 class ClientHttpService implements IClientHttp {

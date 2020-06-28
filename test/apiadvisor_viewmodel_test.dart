@@ -1,7 +1,8 @@
 import 'package:arch/app/app_module.dart';
-import 'package:arch/app/interfaces/client_http_interface.dart';
-import 'package:arch/app/model/apiadvisor_model.dart';
-import 'package:arch/app/viewmodels/apiadvisor_viewmodel.dart';
+import 'package:arch/app/core/interfaces/client_http_interface.dart';
+import 'package:arch/app/modules/home/home_module.dart';
+import 'package:arch/app/modules/home/models/apiadvisor_model.dart';
+import 'package:arch/app/modules/home/viewmodels/apiadvisor_viewmodel.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_modular/flutter_modular_test.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -17,6 +18,9 @@ main() {
   initModule(AppModule(), changeBinds: [
     Bind<IClientHttp>((i) => ClientHttpMockito()),
   ]);
+
+  initModule(HomeModule());
+
   group('ApiAdvisorViewModel', () {
     test('ApiAdvisorViewModel error', () async {
       when(Modular.get<IClientHttp>().get(
